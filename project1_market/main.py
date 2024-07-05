@@ -57,7 +57,7 @@ while True:
         find_item = input("Enter the item name to search in the inventory: ")
         for item in items:
             if item["name"].lower() == find_item.lower():
-                print("The Item name" + find_item + "is displyed below with details")
+                print("The Item name" + find_item + "is displayed below with details")
                 print(item)
             else:
                 print("item not found!")
@@ -72,16 +72,22 @@ while True:
                 item["name"]= input("item name: ")
                 while True:
                     try:
-                        item["quantity"] = int(input("item quantity"))
+                        item["quantity"] = int(input("item quantity: "))
                         break
                     except ValueError:
-                        print("The price should only be digits")
+                        print("invalid_quantity:The quantity should only be digits")
+                while True:
+                    try:
+                        item["price"] = int(input("item price: "))
+                        break
+                    except ValueError:
+                        print("invalid_price: The price should only be digits")
                 print(item)
             else:
-                print("item not found")
+                print("not_found: item not found")
     elif choice ==6:
         print("--------------Exit--------------")
         break
     else:
-        print("invalid options")
+        print("Error: Invalid Options")
         
